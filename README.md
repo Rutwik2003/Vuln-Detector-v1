@@ -1,34 +1,54 @@
 # 🛡️ VulnDetector
 
-**VulnDetector** is a lightweight Python tool that scans websites for missing or weak HTTP security headers — a quick way to catch low-hanging web security issues.
+**VulnDetector** is a powerful yet lightweight Python tool that scans websites for missing or weak HTTP security headers — a fast and effective way to uncover basic web security issues.
 
 ---
 
 ## ✨ Features
 
-* 🔍 Scans for key HTTP security headers:
+* ✅ **Scans for key HTTP security headers** (with weighted importance)
+* 📈 **Calculates a security score** based on detected headers
+* 🎨 **Color-coded terminal output** (green = good, red = missing, yellow = scores)
+* 🧠 **Heuristic detection** of custom or suspicious headers
+* 📁 **Optional export to a result file**
+* ⚠️ **Graceful handling of connection errors**
+* 🐍 Built with Python and easy to read for beginners
 
-  * `Content-Security-Policy`
-  * `X-Frame-Options`
-  * `Strict-Transport-Security`
-  * `X-Content-Type-Options`
-  * `Referrer-Policy`
-  * `Permissions-Policy`
-* 🧠 Simple and beginner-friendly codebase
-* 🧪 Clean CLI experience
-* ⚠️ Handles connection errors gracefully
-* 🐍 Built with Python
+---
+
+## 🔎 Headers Scanned
+
+Weighted headers include (but are not limited to):
+
+- `Strict-Transport-Security`
+- `Content-Security-Policy`
+- `X-Content-Type-Options`
+- `X-Frame-Options`
+- `Referrer-Policy`
+- `Permissions-Policy`
+- `Access-Control-Allow-Origin`
+- `Expect-CT`
+- `Cross-Origin-Opener-Policy`
+- `Cross-Origin-Resource-Policy`
+- `X-XSS-Protection`
+- `Cache-Control`
+- `NEL`
+- `Report-To`
+- `Feature-Policy`
+- `X-Permitted-Cross-Domain-Policies`
+
+Each header contributes a different weight to the final score.
 
 ---
 
 ## 🚀 Installation
 
-1. **Clone the repo**:
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/your-username/VulnDetector.git
    cd VulnDetector
-   ```
+````
 
 2. **(Optional)** Create a virtual environment:
 
@@ -47,47 +67,56 @@
 
 ## 🛠️ Usage
 
-Run the script like this:
+Run the script:
 
 ```bash
 python vuln_detector.py
 ```
 
-Then enter the full URL (including `http://` or `https://`) when prompted:
+Then enter the website URL (with `http://` or `https://`) when prompted:
 
 ```
 Enter website URL (with http/https): https://example.com
 ```
 
+You’ll be asked if you want to export the results to a file.
+
 ---
 
-## 📊 Example Output
+## 📊 Sample Output
 
 ```
-[+] Security Header Check:
+[✔] Strict-Transport-Security (Weight: 20): Present
+[✔] Content-Security-Policy (Weight: 20): Present
+[✖] Referrer-Policy (Weight: 10): Missing
 
-[✔] Content-Security-Policy is present.
-[!] X-Frame-Options is missing!
-[✔] Strict-Transport-Security is present.
-[✔] X-Content-Type-Options is present.
-[!] Referrer-Policy is missing!
-[✔] Permissions-Policy is present.
+[+] Overall Security Header Score: 80.00%
+
+[+] Heuristic Header Detection:
+[?] Possibly interesting: X-Example-Custom-Security -> Value123
 ```
 
 ---
 
 ## 🌱 Future Plans
 
-* 🧠 Add BeautifulSoup support to analyze HTML content
-* 📁 Export results to a report file
-* 🎨 Add color-coded terminal output
-* 🔄 Scan multiple URLs in a batch
-* 🔐 Expand detection to include cookie flags and SSL info
+* 🔄 Batch scan multiple URLs
+* 🧁 GUI support (Tkinter or CLI menu)
+* 🔐 Expand detection to include cookie flags and SSL cert info
+* 📊 Generate HTML reports
 
 ---
 
 ## 🤝 Contributing
 
-Have ideas or improvements? Feel free to fork the repo, open issues, or submit pull requests.
+Found a bug? Want to improve it? Feel free to fork, submit PRs, or open issues.
+Let's make the web a bit safer — one header at a time.
 
 ---
+
+## ⚠️ Disclaimer
+
+This tool is intended for **educational and ethical** use only.
+Do not scan websites without proper authorization.
+
+```
