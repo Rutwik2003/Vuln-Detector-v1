@@ -1,68 +1,67 @@
-````markdown
-# VulnDetector
+# 🛡️ VulnDetector
 
-**VulnDetector** is a simple Python tool to help you quickly check if a website implements key HTTP security headers. These headers help protect sites from common web vulnerabilities.
-
----
-
-## Features
-
-- Checks for common security headers such as:
-  - Content-Security-Policy
-  - X-Frame-Options
-  - Strict-Transport-Security
-  - X-Content-Type-Options
-  - Referrer-Policy
-  - Permissions-Policy
-- Easy to use command-line interface
-- Graceful error handling for invalid URLs or connection issues
-- Lightweight with minimal dependencies
+**VulnDetector** is a lightweight Python tool that scans websites for missing or weak HTTP security headers — a quick way to catch low-hanging web security issues.
 
 ---
 
-## Installation
+## ✨ Features
 
-1. Clone or download this repository:
+* 🔍 Scans for key HTTP security headers:
 
-```bash
-git clone https://github.com/your-username/VulnDetector.git
-cd VulnDetector
-````
-
-2. Create a Python virtual environment (optional but recommended):
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+  * `Content-Security-Policy`
+  * `X-Frame-Options`
+  * `Strict-Transport-Security`
+  * `X-Content-Type-Options`
+  * `Referrer-Policy`
+  * `Permissions-Policy`
+* 🧠 Simple and beginner-friendly codebase
+* 🧪 Clean CLI experience
+* ⚠️ Handles connection errors gracefully
+* 🐍 Built with Python
 
 ---
 
-## Usage
+## 🚀 Installation
 
-Run the script using Python:
+1. **Clone the repo**:
+
+   ```bash
+   git clone https://github.com/your-username/VulnDetector.git
+   cd VulnDetector
+   ```
+
+2. **(Optional)** Create a virtual environment:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## 🛠️ Usage
+
+Run the script like this:
 
 ```bash
 python vuln_detector.py
 ```
 
-You will be prompted to enter a website URL (including `http://` or `https://`):
+Then enter the full URL (including `http://` or `https://`) when prompted:
 
 ```
 Enter website URL (with http/https): https://example.com
 ```
 
-The tool will then display which security headers are present or missing.
-
 ---
 
-## Example Output
+## 📊 Example Output
 
 ```
 [+] Security Header Check:
@@ -77,21 +76,18 @@ The tool will then display which security headers are present or missing.
 
 ---
 
-## Future Improvements
+## 🌱 Future Plans
 
-* Add HTML content analysis with BeautifulSoup
-* Save scan reports to files
-* Add colored terminal output
-* Support batch scanning of multiple URLs
-* Expand security checks to include cookie flags, SSL/TLS info, etc.
+* 🧠 Add BeautifulSoup support to analyze HTML content
+* 📁 Export results to a report file
+* 🎨 Add color-coded terminal output
+* 🔄 Scan multiple URLs in a batch
+* 🔐 Expand detection to include cookie flags and SSL info
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
-Feel free to open issues or submit pull requests to improve VulnDetector!
+Have ideas or improvements? Feel free to fork the repo, open issues, or submit pull requests.
 
-```
-
-Just replace `your-username` with your GitHub username before committing!
-```
+---
