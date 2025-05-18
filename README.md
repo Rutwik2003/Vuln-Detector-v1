@@ -6,13 +6,13 @@
 
 ## ✨ Features
 
-* ✅ **Scans for key HTTP security headers** (with weighted importance)
-* 📈 **Calculates a security score** based on detected headers
-* 🎨 **Color-coded terminal output** (green = good, red = missing, yellow = scores)
-* 🧠 **Heuristic detection** of custom or suspicious headers
-* 📁 **Optional export to a result file**
-* ⚠️ **Graceful handling of connection errors**
-* 🐍 Built with Python and easy to read for beginners
+- ✅ **Scans for key HTTP security headers** (with weighted importance)  
+- 📈 **Calculates a security score** based on detected headers  
+- 🎨 **Color-coded terminal output** (green = good, red = missing, yellow = scores)  
+- 🧠 **Heuristic detection** of custom or suspicious headers  
+- 📁 **Optional export to a result file**  
+- ⚠️ **Graceful handling of connection errors**  
+- 🐍 **Beginner-friendly Python codebase**
 
 ---
 
@@ -46,7 +46,7 @@ Each header contributes a different weight to the final score.
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/VulnDetector.git
+   git clone https://github.com/Haruki993/VulnDetector.git
    cd VulnDetector
 ````
 
@@ -109,7 +109,8 @@ You’ll be asked if you want to export the results to a file.
 
 ## 🤝 Contributing
 
-Found a bug? Want to improve it? Feel free to fork, submit PRs, or open issues.
+Found a bug? Want to improve it?
+Feel free to fork, submit PRs, or open issues.
 Let's make the web a bit safer — one header at a time.
 
 ---
@@ -119,4 +120,4 @@ Let's make the web a bit safer — one header at a time.
 This tool is intended for **educational and ethical** use only.
 Do not scan websites without proper authorization.
 
-```
+````
