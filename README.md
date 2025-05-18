@@ -55,13 +55,13 @@ Each header contributes a different weight to the final score.
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+````
 
 3. **Install dependencies**:
 
    ```bash
    pip install -r requirements.txt
-   ```
+````
 
 ---
 
