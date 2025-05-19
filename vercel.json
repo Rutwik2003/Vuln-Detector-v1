@@ -3,11 +3,14 @@
     "framework": null,
     "functions": {
         "api/*.py": {
-            "handler": "index.app",
             "runtime": "python3.9"
         }
     },
     "routes": [
+        {
+            "src": "/resolve.html",
+            "dest": "/public/resolve.html"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.py"
@@ -23,7 +26,7 @@
                 },
                 {
                     "key": "Content-Security-Policy",
-                    "value": "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'"
+                    "value": "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; script-src 'self'"
                 },
                 {
                     "key": "X-Content-Type-Options",
