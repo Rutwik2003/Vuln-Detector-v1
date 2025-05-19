@@ -5,6 +5,7 @@ from flask import Flask, request, jsonify, render_template
 from urllib.parse import urlparse
 import validators
 
+# Use absolute path for template_folder and static_folder
 base_dir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__,
             template_folder=os.path.join(base_dir, "../public"),
@@ -31,6 +32,10 @@ security_headers = {
 def index():
     return render_template('index.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
 @app.route('/scan', methods=['POST'])
 def scan_headers():
     url = request.json.get('url')
@@ -39,7 +44,7 @@ def scan_headers():
 
     try:
         headers = {'User-Agent': 'Security-Header-Scanner/2.0'}
-        response = requests.get(url, timeout=10, headers=headers, allow_redirects=True)
+        response = requests.get(url, timeout=5, headers=headers, allow_redirects=True)
         response_headers = response.headers
         status_code = response.status_code
     except requests.exceptions.RequestException as e:
@@ -78,5 +83,6 @@ def scan_headers():
 
     return jsonify(results)
 
+# For local development only
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
